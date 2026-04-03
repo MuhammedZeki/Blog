@@ -21,6 +21,11 @@ const postSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        status: {
+            type: String,
+            enum: ["draft", "published"],
+            default: "draft",
+        },
         category: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Category",
