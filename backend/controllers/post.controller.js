@@ -7,7 +7,7 @@ export const createPost = async (req, res) => {
 
         if (!title || !content || !category || !subTitle) {
             return res.status(400).json({
-                message: "Başlık, içerik ve kategori zorunlu",
+                message: "Başlık, alt başlık, içerik ve kategori zorunlu",
             });
         }
 
@@ -231,7 +231,10 @@ export const searchPosts = async (req, res) => {
         }
 
         const posts = await Post.find({
-            title: { $regex: q, $options: "i" },
+            $or: [
+                { title: { $regex: q, $options: "i" } },
+                { subTitle: { $regex: q, $options: "i" } }
+            ],
             status: "published"
         })
             .populate("category", "name slug")
