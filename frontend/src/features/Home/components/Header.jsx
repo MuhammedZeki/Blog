@@ -5,13 +5,13 @@ const Header = () => {
 
   return (
     <div className="bg-[#FFE500] border-b-[3px] border-black sticky top-0 z-50">
-      <div className="px-4 md:px-8 flex items-center justify-between h-[60px] md:h-[72px]">
+      <div className="px-4 md:px-8 flex items-center justify-between w-[90%] mx-auto h-15 md:h-18">
         
         <div className="font-archive text-2xl md:text-4xl tracking-widest leading-none">
           LAHANA<span className="text-[#FF3CAC]" style={{WebkitTextStroke: '1px black'}}>HANDE</span>
         </div>
 
-        <nav className="hidden md:flex items-stretch h-full">
+        <nav className="hidden lg:flex items-stretch h-full">
           {['Ana Sayfa', 'Yazılar', 'Hakkımda', 'İletişim'].map((item, i) => (
             <a
               key={i}
@@ -24,13 +24,13 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button className="hidden md:block font-grotesk bg-black text-[#FFE500] border-[3px] border-black px-4 py-2 text-xs uppercase tracking-widest font-medium cursor-pointer"
+          <button className="hidden lg:block font-grotesk bg-black text-[#FFE500] border-[3px] border-black px-4 py-2 text-xs uppercase tracking-widest font-medium cursor-pointer"
             style={{boxShadow: '3px 3px 0px #0a0a0a'}}>
             ⌕ Ara
           </button>
 
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2 border-2 border-black bg-black"
+            className="lg:hidden flex flex-col gap-1.5 p-2 border-2 border-black bg-black"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span className={`block w-5 h-0.5 bg-[#FFE500] transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -41,7 +41,7 @@ const Header = () => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t-[3px] border-black flex flex-col">
+        <div className="lg:hidden border-t-[3px] border-black flex flex-col">
           {['Ana Sayfa', 'Yazılar', 'Hakkımda', 'İletişim'].map((item, i) => (
             <a
               key={i}

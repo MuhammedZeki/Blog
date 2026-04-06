@@ -1,11 +1,11 @@
 const SliderContent = () => {
   return (
     <section className="border-b-[3px] border-black">
-      <div className="relative w-full min-h-[320px] md:min-h-[500px] bg-black flex flex-col justify-end p-6 md:p-12 cursor-pointer overflow-hidden">
+      <div className="relative w-full min-h-80 md:min-h-125 bg-black flex flex-col justify-end p-6 md:p-12 cursor-pointer overflow-hidden">
         
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0533] to-black z-0" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#1a0533] to-black z-0" />
         <div
-          className="absolute inset-0 z-[1] opacity-5"
+          className="absolute inset-0 z-1 opacity-5"
           style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,229,0,0.3) 30px, rgba(255,229,0,0.3) 32px)'}}
         />
 

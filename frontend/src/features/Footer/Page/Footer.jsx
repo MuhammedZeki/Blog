@@ -1,16 +1,18 @@
 const Footer = () => {
   return (
-    <footer className="bg-black border-t-[3px] border-black mt-10">
+    <footer className="bg-black border-t-[3px] border-black mt-10 ">
+      <div className="w-[90%] mx-auto">
 
+      
       <div
-        className="mx-4 md:mx-8 mt-8 border-[3px] border-black bg-[#FF3CAC] flex flex-col md:grid md:grid-cols-[1fr_auto] items-center gap-6 md:gap-8 px-6 md:px-10 py-8"
+        className="mx-4 md:mx-8 mt-8 border-[3px] border-black bg-[#FF3CAC] flex flex-col md:grid lg:grid-cols-[1fr_auto] items-center gap-6 md:gap-8 px-6 md:px-10 py-8"
         style={{boxShadow: '6px 6px 0px rgba(255,60,172,0.4)'}}
       >
         <div>
           <div className="font-archive text-2xl md:text-4xl tracking-widest text-white">Yeni Yazıları Kaçırma.</div>
           <div className="font-grotesk text-sm text-white/70 mt-1">Her hafta en iyi içerikler doğrudan e-posta kutuna gelsin.</div>
         </div>
-        <div className="flex w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row w-full md:w-auto">
           <input
             type="email"
             placeholder="eposta@adresin.com"
@@ -25,9 +27,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-10 px-4 md:px-8 pt-10 pb-6 text-white">
-        <div className="col-span-2 md:col-span-1">
-          <div className="font-archive text-4xl md:text-5xl tracking-widest leading-none mb-3">
+      <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-10 px-4 md:px-8 pt-10 pb-6 text-white">
+        <div className="col-span-2 lg:col-span-1">
+          <div className="font-archive text-4xl lg:text-5xl tracking-widest leading-none mb-3">
             LAHANA<span className="text-[#FF3CAC]">HANDE</span>
           </div>
           <p className="font-grotesk text-sm text-white/50 leading-relaxed">
@@ -69,7 +71,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-
+</div>
     </footer>
   )
 }
