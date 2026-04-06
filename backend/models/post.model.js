@@ -31,6 +31,10 @@ const postSchema = new mongoose.Schema(
             ref: "Category",
             required: true,
         },
+        readingTime: {
+            type: Number,
+            default: 1,
+        },
     },
     { timestamps: true }
 );

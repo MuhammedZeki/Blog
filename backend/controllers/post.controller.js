@@ -18,6 +18,10 @@ export const createPost = async (req, res) => {
             });
         }
 
+        const plainText = content.replace(/<[^>]+>/g, "");
+        const words = plainText.trim().split(/\s+/).length;
+        const readingTime = Math.ceil(words / 200);
+
         if (isHome) {
             await Post.updateMany(
                 { isHome: true },
@@ -33,6 +37,7 @@ export const createPost = async (req, res) => {
             imageUrl,
             status: status || "draft",
             isHome: isHome || false,
+            readingTime,
         });
 
         res.status(201).json({ post, message: "Post oluşturuldu" });
@@ -168,6 +173,14 @@ export const updatePost = async (req, res) => {
             );
         }
 
+        let readingTime = currentPost.readingTime;
+
+        if (content) {
+            const plainText = content.replace(/<[^>]+>/g, "");
+            const words = plainText.trim().split(/\s+/).length;
+            readingTime = Math.max(1, Math.ceil(words / 200));
+        }
+
         const updatedPost = await Post.findByIdAndUpdate(
             id,
             {
@@ -178,6 +191,7 @@ export const updatePost = async (req, res) => {
                 imageUrl,
                 isHome: isHome ?? currentPost.isHome,
                 status: status ?? currentPost.status,
+                readingTime,
             },
             { new: true, runValidators: true }
         ).populate("category", "name slug");
